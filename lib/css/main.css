@@ -28,6 +28,7 @@ body {
   position: relative;
   max-width: 1440px;
   min-height: 100%;
+  margin-inline: auto;
   font-family: "Barlow", sans-serif;
   font-size: 18px;
 }
