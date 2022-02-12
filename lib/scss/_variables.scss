@@ -1,0 +1,21 @@
+// color
+$primary-color: hsl(7, 99%, 70%); // Soft red
+$secondary-color: hsl(51, 100%, 49%); // yellow
+$accent-color-1: hsl(167, 40%, 24%); // Dark desaturated cyan (graphic design text)
+$accent-color-2: hsl(198, 62%, 26%); // Dark blue (photography text)
+$footer-bg-color: hsl(168, 34%, 41%); // Dark moderate cyan (footer)
+$neutral-color-1: hsl(212, 27%, 19%); // Very dark desaturated blue
+$neutral-color-2: hsl(213, 9%, 39%); // Very dark grayish blue
+$neutral-color-3: hsl(232, 10%, 55%); // Dark grayish blue
+$neutral-color-4: hsl(210, 4%, 67%); // Grayish blue
+$white: hsl(0, 0%, 100%); //White
+
+// typography
+$font-size: 18px;
+
+// font family
+$ff-barlow: 'Barlow', sans-serif; //Weights: 600
+$ff-fraunces: 'Fraunces', serif; //Weights: 700, 900
+
+// media query breakpoint
+$breakpoint: 768px;

@@ -1,0 +1,361 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  max-width: 1440px;
+  min-height: 100%;
+  font-family: "Barlow", sans-serif;
+  font-size: 18px;
+}
+
+nav {
+  padding: 1.3em;
+  z-index: 99;
+}
+nav .nav-logo,
+nav .nav-menu {
+  padding: 1em 0.5em 0 0.5em;
+}
+nav .navbar-toggler {
+  color: transparent;
+}
+@media (max-width: 768px) {
+  nav .nav-menu {
+    position: absolute;
+    top: 6em;
+    left: 50em;
+    right: 0;
+    margin: auto;
+    padding: 2em 0;
+    max-width: 87%;
+    background-color: white;
+    transition: left ease-in-out 250ms;
+  }
+  nav .nav-menu::before {
+    content: "";
+    position: absolute;
+    top: -1.65em;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid white;
+  }
+  nav .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav .nav-menu ul li:last-child {
+    margin-top: 0.8em;
+    width: 120px;
+    height: 47px;
+  }
+  nav .nav-menu ul .nav-link {
+    margin: 0.5em 0;
+    color: #a7abae;
+  }
+  nav .nav-menu ul .contact-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    color: black;
+    font-family: "Fraunces", serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 2em;
+    background-color: #fad400;
+    transition: ease 200ms;
+  }
+}
+
+#header {
+  position: relative;
+}
+#header .figure {
+  position: absolute;
+  top: 7em;
+}
+#header .figure > figcaption {
+  text-transform: uppercase;
+  color: white;
+  font-family: "Fraunces", serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.5rem;
+}
+#header .figure .icon-arrow-down {
+  transform: translateY(3em);
+}
+#header .image-header {
+  margin-top: -4.75em;
+  max-width: 100%;
+}
+#header #desktop-header {
+  display: none;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(autofit, 1fr);
+  grid-template-rows: repeat(autofit, 1fr);
+  gap: 1em;
+  align-items: center;
+  gap: 0;
+}
+.services .service {
+  padding: 5em 1.5em;
+  margin: auto;
+  text-align: center;
+}
+.services .service h1,
+.services .service a {
+  font-family: "Fraunces", serif;
+  color: #23303e;
+}
+.services .service h1 {
+  padding-inline: 1.5em;
+}
+.services .service p {
+  color: #818498;
+}
+.services .service a {
+  padding: 0 0.5rem;
+  position: relative;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.services .service a::before {
+  content: "";
+  position: absolute;
+  left: -0.7px;
+  bottom: -2px;
+  width: 100%;
+  height: 10px;
+  border-radius: 1em;
+  z-index: -1;
+  opacity: 0.3;
+}
+.services .service a:hover::before {
+  opacity: 1;
+}
+.services .service #brand-link::before {
+  background-color: #fad400;
+}
+.services .service #standout-link::before {
+  background-color: #fe7867;
+}
+.services .service_info {
+  padding-top: 20em;
+  font-size: 16px;
+}
+.services .service_info h1 {
+  font-family: "Fraunces", serif;
+  margin-bottom: 1em;
+}
+.services .service_info p {
+  padding-inline: 1em;
+  margin-bottom: 3.5em;
+}
+.services #service-design {
+  background-image: url(../../images/desktop/image-graphic-design.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #25564b;
+}
+.services #service-photography {
+  background-image: url(../../images/desktop/image-photography.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #19536b;
+}
+
+.testimonials_title {
+  margin: 2em 0 4em 0;
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: #a7abae;
+}
+.testimonials .testimonial-image {
+  width: 3.5em;
+}
+.testimonials .testimonial_text {
+  color: #5a636c;
+}
+.testimonials .testimonial_name {
+  color: #23303e;
+  font-family: "Fraunces", serif;
+}
+.testimonials .testimonial_job {
+  color: #a7abae;
+}
+
+.gallery {
+  height: 50%;
+}
+.gallery .gallery_item {
+  height: 70%;
+}
+
+footer {
+  padding-top: 1.5em;
+  background-color: #458c7e;
+}
+footer svg {
+  display: block;
+  fill: #25564b;
+  margin-inline: auto;
+}
+footer .footer-pages > ul > li > a,
+footer .footer-shares > ul > li > a {
+  color: #25564b;
+  transition: color ease 200ms;
+}
+footer .footer-pages > ul > li > a:hover,
+footer .footer-shares > ul > li > a:hover {
+  color: white;
+}
+footer .page_link {
+  margin: auto;
+}
+footer .share_link {
+  margin-inline: 1em;
+}
+
+.attribution {
+  font-size: 11px;
+}
+.attribution a {
+  color: #3e52a3;
+}
+
+@media screen and (min-width: 768px) {
+  nav .nav-logo,
+nav .nav-menu {
+    padding: 1em 0.5em 0 0.5em;
+  }
+  nav .navbar-toggler {
+    display: none;
+  }
+  nav .nav-menu ul {
+    margin: 0;
+  }
+  nav .nav-menu ul li {
+    margin-left: 1em;
+  }
+  nav .nav-menu ul li:last-child {
+    margin: auto;
+    margin-left: 1em;
+  }
+  nav .nav-menu ul li:last-child a {
+    border-radius: 2em;
+    background-color: white;
+    font-family: "Fraunces", serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  nav .nav-menu ul li:last-child a:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  nav .nav-menu ul .nav-link {
+    color: white;
+  }
+
+  #header #desktop-header {
+    display: block;
+  }
+  #header #mobile-header {
+    display: none;
+  }
+
+  footer .page_link {
+    margin-inline: 2em;
+  }
+}
+@media screen and (min-width: 1300px) {
+  #header .figure {
+    top: 13em;
+  }
+  #header .figure .image-header {
+    margin-top: 0;
+  }
+  #header #desktop-header {
+    display: block;
+  }
+  #header #mobile-header {
+    display: none;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(autofit, 1fr);
+    gap: 1em;
+    align-items: center;
+    gap: 0;
+  }
+  .services .service {
+    padding-inline: 6em;
+    text-align: start;
+  }
+  .services .service h1 {
+    padding: 0;
+    padding-right: 0.5em;
+  }
+  .services .service_info {
+    order: 5;
+  }
+  .services .service_info p {
+    padding-inline: 10em;
+  }
+  .services #image-transform {
+    order: 2;
+  }
+  .services #image-standout {
+    order: 3;
+  }
+  .services .brand-service {
+    order: 1;
+  }
+  .services .standout-service {
+    order: 4;
+  }
+
+  .testimonials {
+    margin: 3em auto;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

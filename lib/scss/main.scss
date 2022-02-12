@@ -1,0 +1,407 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	display: block;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	max-width: 1440px;
+	min-height: 100%;
+	font-family: $ff-barlow;
+	font-size: $font-size;
+}
+
+// navbar
+nav {
+	padding: 1.3em;
+	z-index: 99;
+
+	.nav-logo,
+	.nav-menu {
+		padding: 1em 0.5em 0 0.5em;
+	}
+	.navbar-toggler {
+		color: transparent;
+	}
+
+	@media (max-width: 768px) {
+		.nav-menu {
+			position: absolute;
+			top: 6em;
+			left: 50em;
+			right: 0;
+			margin: auto;
+			padding: 2em 0;
+			max-width: 87%;
+			background-color: $white;
+			transition: left ease-in-out 250ms;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: -1.65em;
+				right: 0;
+				width: 0;
+				height: 0;
+				border-top: 30px solid transparent;
+				border-bottom: 30px solid transparent;
+
+				border-right: 30px solid white;
+			}
+
+			ul {
+				flex-direction: column;
+				align-items: center;
+
+				li:last-child {
+					margin-top: 0.8em;
+					width: 120px;
+					height: 47px;
+				}
+
+				.nav-link {
+					margin: 0.5em 0;
+					color: $neutral-color-4;
+				}
+				.contact-link {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 0;
+					height: 100%;
+					color: black;
+					font-family: $ff-fraunces;
+					font-size: 13px;
+					text-transform: uppercase;
+					border-radius: 2em;
+					background-color: $secondary-color;
+					transition: ease 200ms;
+				}
+			}
+		}
+	}
+}
+
+// header section
+#header {
+	position: relative;
+
+	.figure {
+		position: absolute;
+		top: 7em;
+
+		& > figcaption {
+			text-transform: uppercase;
+			color: $white;
+			font-family: $ff-fraunces;
+			font-size: 2.5rem;
+			font-weight: 900;
+			line-height: 1.3;
+			letter-spacing: 0.5rem;
+		}
+
+		.icon-arrow-down {
+			transform: translateY(3em);
+		}
+	}
+
+	.image-header {
+		margin-top: -4.75em;
+		max-width: 100%;
+	}
+	#desktop-header {
+		display: none;
+	}
+}
+
+// services section
+.services {
+	@include grid();
+	gap: 0;
+
+	.service {
+		padding: 5em 1.5em;
+		margin: auto;
+		text-align: center;
+
+		h1,
+		a {
+			font-family: $ff-fraunces;
+			color: $neutral-color-1;
+		}
+		h1 {
+			padding-inline: 1.5em;
+		}
+		p {
+			color: $neutral-color-3;
+		}
+		a {
+			padding: 0 0.5rem;
+			position: relative;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+			text-align: center;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: -0.7px;
+				bottom: -2px;
+				width: 100%;
+				height: 10px;
+				border-radius: 1em;
+				z-index: -1;
+				opacity: 0.3;
+			}
+			&:hover {
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+		#brand-link::before {
+			background-color: $secondary-color;
+		}
+		#standout-link::before {
+			background-color: $primary-color;
+		}
+	}
+	.service_info {
+		padding-top: 20em;
+		font-size: 16px;
+
+		h1 {
+			font-family: $ff-fraunces;
+			margin-bottom: 1em;
+		}
+		p {
+			padding-inline: 1em;
+			margin-bottom: 3.5em;
+		}
+	}
+	#service-design {
+		background-image: url(../../images/desktop/image-graphic-design.jpg);
+		background-position: center;
+		background-size: cover;
+
+		color: $accent-color-1;
+	}
+	#service-photography {
+		background-image: url(../../images/desktop/image-photography.jpg);
+		background-position: center;
+		background-size: cover;
+
+		color: $accent-color-2;
+	}
+}
+
+// testimonials section
+.testimonials {
+	&_title {
+		margin: 2em 0 4em 0;
+		font-family: $ff-fraunces;
+		text-transform: uppercase;
+		letter-spacing: 0.3rem;
+		color: $neutral-color-4;
+	}
+	.testimonial-image {
+		width: 3.5em;
+	}
+	.testimonial_text {
+		color: $neutral-color-2;
+	}
+	.testimonial_name {
+		color: $neutral-color-1;
+		font-family: $ff-fraunces;
+	}
+	.testimonial_job {
+		color: $neutral-color-4;
+	}
+}
+
+// gallery section
+.gallery {
+	height: 50%;
+
+	.gallery_item {
+		height: 70%;
+	}
+}
+
+// footer section
+footer {
+	padding-top: 1.5em;
+	background-color: $footer-bg-color;
+
+	svg {
+		display: block;
+		fill: $accent-color-1;
+		margin-inline: auto;
+	}
+	.footer-pages > ul > li > a,
+	.footer-shares > ul > li > a {
+		color: $accent-color-1;
+		transition: color ease 200ms;
+
+		&:hover {
+			color: white;
+		}
+	}
+	.page_link {
+		margin: auto;
+	}
+	.share_link {
+		margin-inline: 1em;
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	a {
+		color: hsl(228, 45%, 44%);
+	}
+}
+
+// media query breakpoint
+@media screen and (min-width: 768px) {
+	// navbar
+	nav {
+		// padding-top: 4em;
+		.nav-logo,
+		.nav-menu {
+			padding: 1em 0.5em 0 0.5em;
+		}
+
+		.navbar-toggler {
+			display: none;
+		}
+		.nav-menu {
+			ul {
+				margin: 0;
+				li {
+					margin-left: 1em;
+				}
+
+				li:last-child {
+					margin: auto;
+					margin-left: 1em;
+					a {
+						border-radius: 2em;
+						background-color: white;
+						font-family: $ff-fraunces;
+						text-transform: uppercase;
+						color: black;
+						font-size: 14px;
+						font-weight: 700;
+						&:hover {
+							color: white;
+							background-color: rgba($color: white, $alpha: 0.3);
+						}
+					}
+				}
+
+				.nav-link {
+					color: white;
+				}
+			}
+		}
+	}
+
+	// header
+	#header {
+		#desktop-header {
+			display: block;
+		}
+		#mobile-header {
+			display: none;
+		}
+	}
+
+	// footer
+	footer {
+		.page_link {
+			margin-inline: 2em;
+		}
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	// header
+	#header {
+		.figure {
+			top: 13em;
+
+			.image-header {
+				margin-top: 0;
+			}
+		}
+		#desktop-header {
+			display: block;
+		}
+		#mobile-header {
+			display: none;
+		}
+	}
+
+	// services
+	.services {
+		@include grid(2);
+		gap: 0;
+
+		.service {
+			padding-inline: 6em;
+			text-align: start;
+			h1 {
+				padding: 0;
+				padding-right: 0.5em;
+			}
+		}
+		.service_info {
+			order: 5;
+			p {
+				padding-inline: 10em;
+			}
+		}
+		#image-transform {
+			order: 2;
+		}
+		#image-standout {
+			order: 3;
+		}
+		.brand-service {
+			order: 1;
+		}
+		.standout-service {
+			order: 4;
+		}
+	}
+
+	// testimonials
+	.testimonials {
+		margin: 3em auto;
+	}
+}
