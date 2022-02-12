@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-[Solution URL]() |
-[Live Site URL]() |
+[Solution URL](https://www.frontendmentor.io/solutions/mobilefirst-with-sass-and-bootstrap-U5WjcWI8w) |
+[Live Site URL](https://samudriawan.github.io/sunnyside-agency-frontendmentor/) |
 [Challenge](https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef)
 
 ## My process
