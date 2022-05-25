@@ -36,6 +36,11 @@ body {
 	font-size: $font-size;
 }
 
+// for burger menu
+.show {
+	display: block !important;
+	transform: translateX(0) !important;
+}
 // navbar
 nav {
 	padding: 1.3em;
@@ -51,15 +56,18 @@ nav {
 
 	@media (max-width: 768px) {
 		.nav-menu {
+			display: none;
 			position: absolute;
 			top: 6em;
-			left: 50em;
+			left: 0;
 			right: 0;
 			margin: auto;
 			padding: 2em 0;
 			max-width: 87%;
 			background-color: $white;
-			transition: left ease-in-out 250ms;
+			transform: translateX(200%);
+			transition: transform ease-in-out 250ms;
+			// z-index: 9;
 
 			&::before {
 				content: '';

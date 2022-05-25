@@ -33,6 +33,11 @@ body {
   font-size: 18px;
 }
 
+.show {
+  display: block !important;
+  transform: translateX(0) !important;
+}
+
 nav {
   padding: 1.3em;
   z-index: 99;
@@ -46,15 +51,17 @@ nav .navbar-toggler {
 }
 @media (max-width: 768px) {
   nav .nav-menu {
+    display: none;
     position: absolute;
     top: 6em;
-    left: 50em;
+    left: 0;
     right: 0;
     margin: auto;
     padding: 2em 0;
     max-width: 87%;
     background-color: white;
-    transition: left ease-in-out 250ms;
+    transform: translateX(200%);
+    transition: transform ease-in-out 250ms;
   }
   nav .nav-menu::before {
     content: "";
